@@ -54,7 +54,7 @@ export default function CodeEditor() {
         <Editor
           className={`outline rounded p-4 ${ theme === 'dark' ? 'bg-neutral-900' : 'bg-white' }`}
           height='50vh'
-          width='100%'
+          width='750px'
           language={language}
           value={code}
           onChange={(e) => {
