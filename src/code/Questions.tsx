@@ -16,10 +16,9 @@ export interface Question {
   id: number;
   title: string;
   description: string;
-}
-[];
+}[];
 
-export default function Questions() {
+export default function QuestionsPage() {
   const [difficulty, setDifficulty] = useState("Easy");
   const [selectedQuestion, setSelectedQuestion] = useState({} as Question);	
   const [questions, setQuestions] = useState({} as Question[]);
@@ -89,28 +88,36 @@ export default function Questions() {
         </div>
       </div>
       <div className="flex justify-center items-center w-full h-1/5 ">
-        <div className="flex-col w-3/4 justify-start items-center rounded  border-zinc-800 border bg-stone-200 dark:bg-neutral-900">
+        <div className="flex-col w-[950px] justify-start items-center rounded  border-zinc-800 border">
           {selectedQuestion && selectedQuestion.title && 
             (
-                <div className="flex flex-col gap-4 p-4">
-                  <h1 className="px-8 pt-8 pb-2 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">{`Problem ${
-                    selectedQuestion.id
-                  }: ${selectedQuestion.title}`}</h1>
-                  <Separator className=" ml-6 w-3/4" />
-                  <div className="flex flex-col ml-14 mt-4">
-                    <h1 className="scroll-m-20 text-2xl font-semibold tracking-tight">
-                      Difficulty: {difficulty}
+              <div className="flex flex-col gap-4 p-4">
+                <h1 className="px-8 pt-8 pb-2 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">{`Problem ${
+                  selectedQuestion.id
+                }: ${selectedQuestion.title}`}</h1>
+                <Separator className=" ml-6 w-3/4" />
+                <div className="flex flex-col ml-14 mt-4">
+                  <h1 className="flex-row flex scroll-m-20 text-2xl font-semibold tracking-tight ">
+                    Difficulty: 
+                    <h1 className="text-primary ml-2">
+                      {difficulty}
                     </h1>
-                  </div>
-                  <p className="leading-7  ml-8 px-6 py-2 pb-8">
-                    {selectedQuestion.description}
-                  </p>
+                  </h1>
                 </div>
+                <p className="leading-7  ml-8 px-6 py-2 pb-8">
+                  {selectedQuestion.description}
+                </p>
+              </div>
             )}
         </div>
       </div>
       <CodeEditor />
-      <div className="mt-10"></div>
+      <div className="pt-20 pb-10">
+        <Separator className="w-1/2 mx-auto my-4" />
+        <p className="text-center text-muted-foreground">
+          Created with 🧡 by <a href="https://github.com/matheus-hrm">Matheus Henrique</a>
+        </p>
+      </div>
     </div>
   );
 }
