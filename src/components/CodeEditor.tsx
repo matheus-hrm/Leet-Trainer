@@ -50,11 +50,11 @@ export default function CodeEditor() {
           </SelectContent>
         </Select>
       </div>
-      <div className='flex-row h-3/4 max-w-screen-lg flex items-center justify-between m-8'>
+      <div className='flex-row h-3/4 max-w-screen-lg flex items-center justify-between m-8 '>
         <Editor
-          className={`outline rounded p-4 ${ theme === 'dark' ? 'bg-neutral-900' : 'bg-white' }`}
+          className={`border-2 border-primary bg-background  rounded p-4 ${ theme === 'dark' ? 'bg-neutral-900' : 'bg-white' } `}
           height='50vh'
-          width='750px'
+          width='860px'
           language={language}
           value={code}
           onChange={(e) => {

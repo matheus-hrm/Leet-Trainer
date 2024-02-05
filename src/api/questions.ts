@@ -1,9 +1,9 @@
-import { Question } from "@/code/Questions";
+import { Question } from "@/pages/Questions";
 import axios from "axios"
 
-const URL = "http://localhost:3000/questions"
+const URL = "/questions"
 
 export const getQuestions = async (): Promise<Question[]> => {
     const res = await axios.get(URL);
-    return res.data;
+    return res.data;   
 }
